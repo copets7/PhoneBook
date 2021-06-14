@@ -16,8 +16,6 @@ public class ContactParser {
         contactLine.append(contact.getLastName());
         contactLine.append(SEPARATOR);
         contactLine.append(parsePhones(contact.getPhones()));
-        contactLine.append(SEPARATOR);
-        contactLine.append(contact.getAddresse().getId());
         return contactLine.toString();
     }
 

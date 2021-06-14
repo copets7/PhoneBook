@@ -15,6 +15,7 @@ public class ContactDAOImpl implements ContactDAO {
     @Override
     public void createContact(Contact contact) {
         String contactLine = parseContact(contact);
+        // TODO createAdres and create Group
         if (contact.getGroups().isEmpty()){
             long id = getNumberOfRecords(CONTACT_FILE_PATH) + 1;
             contactLine = String.valueOf(id) + contactLine;
