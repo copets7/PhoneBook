@@ -7,6 +7,46 @@
     <groupId>by.itstep</groupId>
     <artifactId>phonebook</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- TESTING  -->
+        <junit>4.13.2</junit>
+        <mockito-all>1.10.19</mockito-all>
+
+        <junit-jupiter>5.7.2</junit-jupiter>
+    </properties>
+
+    <dependencies>
+        <!-- TESTING  -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito-all}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.11.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
     <build>
         <plugins>
             <plugin>

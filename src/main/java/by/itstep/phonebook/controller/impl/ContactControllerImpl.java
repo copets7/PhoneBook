@@ -3,6 +3,7 @@ package by.itstep.phonebook.controller.impl;
 import by.itstep.phonebook.controller.ContactController;
 import by.itstep.phonebook.entity.Contact;
 import by.itstep.phonebook.service.ContactService;
+import by.itstep.phonebook.service.ServiceException;
 import by.itstep.phonebook.service.ServiceFactory;
 
 import java.util.Set;
@@ -16,7 +17,7 @@ public class ContactControllerImpl implements ContactController {
     }
 
     @Override
-    public void createContact(Contact contact) {
+    public void createContact(Contact contact) throws ServiceException {
         contactService.createContact(contact);
     }
 
