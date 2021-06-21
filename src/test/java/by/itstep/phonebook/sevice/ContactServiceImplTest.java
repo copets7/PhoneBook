@@ -12,6 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.Set;
+
 import static by.itstep.phonebook.data.ContactTestDataFactory.createContact;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -55,5 +57,11 @@ public class ContactServiceImplTest {
             assertEquals(e.getClass(), ServiceException.class);
             assertEquals(e.getMessage(), PHONE_ERROR);
         }
+    }
+
+    @Test
+    public void check(){
+        Set<String> set = null;
+        System.out.println(set.isEmpty());
     }
 }

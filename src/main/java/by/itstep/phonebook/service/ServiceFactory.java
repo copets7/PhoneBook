@@ -19,4 +19,8 @@ public class ServiceFactory {
     public ContactService getContactService(){
         return new ContactServiceImpl();
     }
+
+    public GroupService getGroupService() {
+        return null;
+    }
 }

@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
 
 public class Connection {
 
+
+
+    //TODO
+
     public static List<String> readFullFile(File file) {
         try (BufferedReader br =
                      new BufferedReader(new FileReader(file))) {
@@ -20,7 +24,7 @@ public class Connection {
         return null;
     }
 
-    public static Long getNumberOfRecords(String path){
+    public static Long getId(String path){
         try {
             String lastLine = Files.lines(Paths.get(path)).
                     reduce((a,b)-> b).orElse(null);

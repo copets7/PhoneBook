@@ -5,53 +5,57 @@ import java.util.Set;
 public class Contact {
 
     private Integer id;
-    private String firsName;
-    private String lastName;
-    private Set<String> phones;
-    private Address address;
+    private java.lang.String firsName;
+    private java.lang.String lastName;
+    private Set<java.lang.String> phones;
+    private String email;
     private Set<Group> groups;
 
-    public Contact(String firsName, String lastName, Set<String> phones, Address addresse, Set<Group> groups) {
+    public Contact(java.lang.String firsName, java.lang.String lastName, Set<java.lang.String> phones, String addresse, Set<Group> groups) {
         this.firsName = firsName;
         this.lastName = lastName;
         this.phones = phones;
-        this.address = addresse;
+        this.email = addresse;
         this.groups = groups;
     }
 
     public Contact() {
     }
 
-    public String getFirsName() {
+    public Integer getId() {
+        return id;
+    }
+
+    public java.lang.String getFirsName() {
         return firsName;
     }
 
-    public void setFirsName(String firsName) {
+    public void setFirsName(java.lang.String firsName) {
         this.firsName = firsName;
     }
 
-    public String getLastName() {
+    public java.lang.String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(java.lang.String lastName) {
         this.lastName = lastName;
     }
 
-    public Set<String> getPhones() {
+    public Set<java.lang.String> getPhones() {
         return phones;
     }
 
-    public void setPhones(Set<String> phones) {
+    public void setPhones(Set<java.lang.String> phones) {
         this.phones = phones;
     }
 
-    public Address getAddresse() {
-        return address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Group> getGroups() {
