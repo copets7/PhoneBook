@@ -1,10 +1,14 @@
 package by.itstep.phonebook.entity;
 
+import com.opencsv.bean.CsvBindByName;
+
 import java.util.Set;
 
 public class Group {
 
+    @CsvBindByName(column = "id")
     private Integer id;
+    @CsvBindByName(column = "name")
     private String name;
     private Set<Contact> contacts;
 

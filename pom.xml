@@ -12,8 +12,8 @@
         <!-- TESTING  -->
         <junit>4.13.2</junit>
         <mockito-all>1.10.19</mockito-all>
-
         <junit-jupiter>5.7.2</junit-jupiter>
+        <opencsv>5.3</opencsv>
     </properties>
 
     <dependencies>
@@ -36,12 +36,17 @@
             <version>3.11.1</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit-jupiter}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- CSV  -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv}</version>
         </dependency>
 
     </dependencies>

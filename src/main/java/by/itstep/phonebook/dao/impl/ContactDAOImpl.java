@@ -1,40 +1,33 @@
 package by.itstep.phonebook.dao.impl;
 
+import by.itstep.phonebook.conection.Connection;
 import by.itstep.phonebook.dao.ContactDAO;
 import by.itstep.phonebook.entity.Contact;
 import by.itstep.phonebook.entity.Group;
+import by.itstep.phonebook.entity.pojo.ContactHasGroup;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static by.itstep.phonebook.Properties.CONTACT_FILE_PATH;
-import static by.itstep.phonebook.conection.Connection.getId;
-import static by.itstep.phonebook.conection.Connection.writeToFileOneLine;
-import static by.itstep.phonebook.parser.csv.ContactParser.parseContact;
-import static by.itstep.phonebook.parser.csv.ContactParser.parseContactHasGroup;
+import static by.itstep.phonebook.Properties.CONTACT_HAS_GROUP_FILE_PATH;
 
 public class ContactDAOImpl implements ContactDAO {
 
-    @Override
-    public void insertContact(Contact contact) {
-        String contactLine = parseContact(contact);
-        Long id = getId(CONTACT_FILE_PATH);
-        contactLine = id + contactLine;
-        writeToFileOneLine(CONTACT_FILE_PATH, contactLine);
+    private Connection connection = Connection.getInstance();
 
+    @Override
+    public Contact insertContact(Contact contact) {
+        Integer id = connection.getId(CONTACT_FILE_PATH);
+        contact.setId(id);
+        connection.writeCsvFromBean(CONTACT_FILE_PATH, Collections.singletonList(contact));
         Set<Group> groups = contact.getGroups();
         if (groups != null && !groups.isEmpty()) {
-            Map<Long, Long> idMap = getIdMap(Contact contact);
-            Set<String> contactHasGroup = parseContactHasGroup(contact)
-
-
-
-            contactLine = String.valueOf(id) + contactLine;
-            writeToFileOneLine(CONTACT_FILE_PATH, contactLine);
-        } else {
-            // inser group has contacrt
+            Integer contactHasGroupId = connection.getId(CONTACT_HAS_GROUP_FILE_PATH);
+            List<ContactHasGroup> chgRecords =
+                    ContactHasGroup.parse(contact, contactHasGroupId);
+            connection.writeCsvFromBean(CONTACT_HAS_GROUP_FILE_PATH, chgRecords);
         }
+        return contact;
     }
 
     private Map<Integer, Integer> getIdMap(Contact contact) {

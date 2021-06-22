@@ -4,5 +4,5 @@ import by.itstep.phonebook.entity.Contact;
 
 public interface ContactDAO {
 
-    void insertContact(Contact contact);
+    Contact insertContact(Contact contact);
 }
