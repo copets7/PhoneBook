@@ -29,14 +29,4 @@ public class ContactDAOImpl implements ContactDAO {
         }
         return contact;
     }
-
-    private Map<Integer, Integer> getIdMap(Contact contact) {
-        Map<Integer, Integer> idMap = new HashMap<>();
-        for (Group group : contact.getGroups()) {
-            idMap.put(contact.getId(), group.getId());
-        }
-        return idMap;
-    }
-
-
 }

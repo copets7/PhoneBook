@@ -25,8 +25,7 @@ public class ContactServiceImpl implements ContactService {
         if (validateNewContact(contact)) {
             Set<Group> groups = contact.getGroups();
             if (groups != null && !groups.isEmpty()) {
-                groups =
-                        groups.stream().filter(group ->
+                groups = groups.stream().filter(group ->
                                 group.getId() == null).collect(Collectors.toSet());
                 if (groups.isEmpty()) {
                     contact.setGroups(null);

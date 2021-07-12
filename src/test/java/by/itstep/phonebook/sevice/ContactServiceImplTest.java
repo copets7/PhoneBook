@@ -58,10 +58,4 @@ public class ContactServiceImplTest {
             assertEquals(e.getMessage(), PHONE_ERROR);
         }
     }
-
-    @Test
-    public void check(){
-        Set<String> set = null;
-        System.out.println(set.isEmpty());
-    }
 }
