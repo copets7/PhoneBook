@@ -1,8 +1,7 @@
 package by.itstep.phonebook.dao;
 
-import by.itstep.phonebook.conection.Connection;
-import by.itstep.phonebook.dao.impl.ContactDAOImpl;
-import by.itstep.phonebook.service.ServiceException;
+import by.itstep.phonebook.conection.ConnectionCsvImpl;
+import by.itstep.phonebook.dao.impl.ContactDaoCsvImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,17 +13,17 @@ import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ContactDAOImplTest {
+public class ContactDaoCsvImplTest {
 
     @InjectMocks
-    private ContactDAOImpl contactDAO;
+    private ContactDaoCsvImpl contactDAO;
 
     @Mock
-    private Connection connection;
+    private ConnectionCsvImpl connection;
 
     @Before
     public void setUp(){
-        when(Connection.getInstance()).thenReturn(connection);
+        when(ConnectionCsvImpl.getInstance()).thenReturn(connection);
     }
 
     @Test

@@ -14,9 +14,17 @@
         <mockito-all>1.10.19</mockito-all>
         <junit-jupiter>5.7.2</junit-jupiter>
         <opencsv>5.3</opencsv>
+        <mysql-connector-java>8.0.25</mysql-connector-java>
     </properties>
 
     <dependencies>
+        <!-- JDBC -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java}</version>
+        </dependency>
+
         <!-- TESTING  -->
         <dependency>
             <groupId>junit</groupId>

@@ -1,6 +1,6 @@
 package by.itstep.phonebook.dao;
 
-import by.itstep.phonebook.dao.impl.ContactDAOImpl;
+import by.itstep.phonebook.dao.impl.ContactDaoCsvImpl;
 
 public class DaoFactory {
 
@@ -17,6 +17,6 @@ public class DaoFactory {
     }
 
     public ContactDAO getContactDAO(){
-        return new ContactDAOImpl();
+        return new ContactDaoCsvImpl();
     }
 }

@@ -1,6 +1,6 @@
 package by.itstep.phonebook.dao.impl;
 
-import by.itstep.phonebook.conection.Connection;
+import by.itstep.phonebook.conection.ConnectionCsvImpl;
 import by.itstep.phonebook.dao.ContactDAO;
 import by.itstep.phonebook.entity.Contact;
 import by.itstep.phonebook.entity.Group;
@@ -11,12 +11,12 @@ import java.util.*;
 import static by.itstep.phonebook.Properties.CONTACT_FILE_PATH;
 import static by.itstep.phonebook.Properties.CONTACT_HAS_GROUP_FILE_PATH;
 
-public class ContactDAOImpl implements ContactDAO {
+public class ContactDaoCsvImpl implements ContactDAO {
 
-    private Connection connection = Connection.getInstance();
+    private ConnectionCsvImpl connection = ConnectionCsvImpl.getInstance();
 
     @Override
-    public Contact insertContact(Contact contact) {
+    public Contact save(Contact contact) {
         Integer id = connection.getId(CONTACT_FILE_PATH);
         contact.setId(id);
         connection.writeCsvFromBean(CONTACT_FILE_PATH, Collections.singletonList(contact));

@@ -1,33 +1,28 @@
 package by.itstep.phonebook.conection;
 
-import by.itstep.phonebook.entity.Group;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
-import sun.rmi.transport.StreamRemoteCall;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Connection<T> {
+public class ConnectionCsvImpl<T> {
 
     private static final char SEPARATOR = CSVWriter.DEFAULT_SEPARATOR;
-    private static Connection instance;
+    private static ConnectionCsvImpl instance;
     //private Class clazz;
 
-    private Connection() {
+    private ConnectionCsvImpl() {
     }
 
-    public static Connection getInstance() {
-        if (instance == null) instance = new Connection();
+    public static ConnectionCsvImpl getInstance() {
+        if (instance == null) instance = new ConnectionCsvImpl();
         return instance;
     }
 

@@ -1,14 +1,14 @@
 package by.itstep.phonebook.connecton;
 
 import by.itstep.phonebook.Properties;
-import by.itstep.phonebook.conection.Connection;
+import by.itstep.phonebook.conection.ConnectionCsvImpl;
 import org.junit.Test;
 
 import java.io.File;
 
 public class ConnectionTest {
 
-    private static final Connection connection = Connection.getInstance();
+    private static final ConnectionCsvImpl connection = ConnectionCsvImpl.getInstance();
     public static final String TEST_ROOT;
     public static final String CONTACT_HAS_GROUP_PATH;
     public static final String CONTACT_PATH;

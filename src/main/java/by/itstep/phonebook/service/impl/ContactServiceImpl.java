@@ -33,7 +33,7 @@ public class ContactServiceImpl implements ContactService {
                     contact.setGroups(groups);
                 }
             }
-            contactDAO.insertContact(contact);
+            contactDAO.save(contact);
         }
     }
 
