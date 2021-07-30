@@ -10,12 +10,17 @@
 <head>
     <title>Title</title>
     <form method="post">
-        <label>Name:
-            <input type="text" name="name"><br />
+        <label>First Name:
+            <input type="text" name="firsName"><br />
         </label>
-
-        <label>Password:
-            <input type="password" name="pass"><br />
+        <label>Last Name:
+            <input type="text" name="lastName"><br />
+        </label>
+        <label>Email:
+            <input type="text" name="email"><br />
+        </label>
+        <label>Phone:
+            <input type="text" name="phone"><br />
         </label>
         <button type="submit">Submit</button>
     </form>

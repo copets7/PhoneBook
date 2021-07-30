@@ -29,4 +29,9 @@ public class ContactDaoCsvImpl implements ContactDAO {
         }
         return contact;
     }
+
+    @Override
+    public List<Contact> findAll() {
+        return null;
+    }
 }

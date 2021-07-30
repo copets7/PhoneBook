@@ -1,6 +1,7 @@
 package by.itstep.phonebook.dao;
 
 import by.itstep.phonebook.dao.impl.ContactDaoCsvImpl;
+import by.itstep.phonebook.dao.impl.ContactDaoJdbsImpl;
 
 public class DaoFactory {
 
@@ -17,6 +18,6 @@ public class DaoFactory {
     }
 
     public ContactDAO getContactDAO(){
-        return new ContactDaoCsvImpl();
+        return new ContactDaoJdbsImpl();
     }
 }

@@ -9,20 +9,20 @@ public class Contact {
     @CsvBindByName(column = "id")
     private Integer id;
     @CsvBindByName(column = "firsName")
-    private java.lang.String firsName;
+    private String firsName;
     @CsvBindByName(column = "lastName")
-    private java.lang.String lastName;
+    private String lastName;
     @CsvBindByName(column = "phone_set")
-    private Set<java.lang.String> phones;
+    private Set<String> phones;
     @CsvBindByName(column = "email")
     private String email;
     private Set<Group> groups;
 
-    public Contact(java.lang.String firsName, java.lang.String lastName, Set<java.lang.String> phones, String addresse, Set<Group> groups) {
+    public Contact(String firsName, String lastName, Set<String> phones, String email, Set<Group> groups) {
         this.firsName = firsName;
         this.lastName = lastName;
         this.phones = phones;
-        this.email = addresse;
+        this.email = email;
         this.groups = groups;
     }
 
@@ -37,27 +37,27 @@ public class Contact {
         this.id = id;
     }
 
-    public java.lang.String getFirsName() {
+    public String getFirsName() {
         return firsName;
     }
 
-    public void setFirsName(java.lang.String firsName) {
+    public void setFirsName(String firsName) {
         this.firsName = firsName;
     }
 
-    public java.lang.String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(java.lang.String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public Set<java.lang.String> getPhones() {
+    public Set<String> getPhones() {
         return phones;
     }
 
-    public void setPhones(Set<java.lang.String> phones) {
+    public void setPhones(Set<String> phones) {
         this.phones = phones;
     }
 
