@@ -11,7 +11,7 @@
 
     <servlet-mapping>
         <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <url-pattern>phonebook-1.0/add</url-pattern>
     </servlet-mapping>
     <!-- list servlet -->
     <servlet>
@@ -21,7 +21,7 @@
 
     <servlet-mapping>
         <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
+        <url-pattern>phonebook-1.0/list</url-pattern>
     </servlet-mapping>
 
 </web-app>

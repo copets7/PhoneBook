@@ -7,6 +7,7 @@ import by.itstep.phonebook.entity.Group;
 import by.itstep.phonebook.service.ContactService;
 import by.itstep.phonebook.service.ServiceException;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -35,6 +36,11 @@ public class ContactServiceImpl implements ContactService {
             }
             contactDAO.save(contact);
         }
+    }
+
+    @Override
+    public List<Contact> getAll() {
+        return contactDAO.findAll();
     }
 
     private boolean validateNewContact(Contact contact) throws ServiceException {

@@ -10,17 +10,17 @@ import java.util.Set;
 public class ContactTestDataFactory {
 
 
-    public static Contact createContact(java.lang.String lastName,
-                                        java.lang.String phone) {
-        return createContact(lastName, phone, null, null);
+    public static Contact createContact(String lastName,
+                                        String phone) {
+        return createContact(lastName, phone, "email@test.com", null);
     }
 
-    public static Contact createContact(java.lang.String lastName,
-                                        java.lang.String phone,
-                                        String string,
+    public static Contact createContact(String lastName,
+                                        String phone,
+                                        String email,
                                         Set<Group> groups) {
         return new Contact("testFirstName", lastName,
                 new HashSet<>(Collections.singletonList(phone)),
-                string, groups);
+                email, groups);
     }
 }

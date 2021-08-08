@@ -2,6 +2,7 @@ package by.itstep.phonebook.entity;
 
 import com.opencsv.bean.CsvBindByName;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Contact {
@@ -16,7 +17,7 @@ public class Contact {
     private Set<String> phones;
     @CsvBindByName(column = "email")
     private String email;
-    private Set<Group> groups;
+    private Set<Group> groups = new HashSet<>();
 
     public Contact(String firsName, String lastName, Set<String> phones, String email, Set<Group> groups) {
         this.firsName = firsName;
@@ -75,5 +76,14 @@ public class Contact {
 
     public void setGroups(Set<Group> groups) {
         this.groups = groups;
+    }
+
+    public void addGroup(Group group){
+        this.groups.add(group);
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Last Name: %s  Email: %s Phones: %s Groups: %s", lastName, email, phones, groups);
     }
 }

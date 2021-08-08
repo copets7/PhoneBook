@@ -19,6 +19,6 @@ public class Utils {
     }
 
     public static boolean isEmail(String email){
-        return email.matches(EMAIL_PATTERN);
+        return email!= null && email.matches(EMAIL_PATTERN);
     }
 }

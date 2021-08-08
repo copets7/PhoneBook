@@ -16,7 +16,6 @@ public class ConnectionCsvImpl<T> {
 
     private static final char SEPARATOR = CSVWriter.DEFAULT_SEPARATOR;
     private static ConnectionCsvImpl instance;
-    //private Class clazz;
 
     private ConnectionCsvImpl() {
     }

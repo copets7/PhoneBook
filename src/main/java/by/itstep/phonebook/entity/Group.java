@@ -18,6 +18,10 @@ public class Group {
         this.contacts = contacts;
     }
 
+    public Group(String name) {
+        this.name = name;
+    }
+
     public Group() {
     }
 
@@ -43,5 +47,10 @@ public class Group {
 
     public void setContacts(Set<Contact> contacts) {
         this.contacts = contacts;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
