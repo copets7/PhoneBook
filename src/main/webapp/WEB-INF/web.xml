@@ -6,12 +6,12 @@
     <!-- add servlet -->
     <servlet>
         <servlet-name>add</servlet-name>
-        <servlet-class>by.itstep.phonebook.controller.impl.ContactControllerServletImpl</servlet-class>
+        <servlet-class>by.itstep.phonebook.controller.servlets.AddContactServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>add</servlet-name>
-        <url-pattern>phonebook-1.0/add</url-pattern>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
     <!-- list servlet -->
     <servlet>
@@ -21,7 +21,7 @@
 
     <servlet-mapping>
         <servlet-name>list</servlet-name>
-        <url-pattern>phonebook-1.0/list</url-pattern>
+        <url-pattern>/list</url-pattern>
     </servlet-mapping>
 
 </web-app>

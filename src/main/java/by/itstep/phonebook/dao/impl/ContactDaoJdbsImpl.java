@@ -14,14 +14,14 @@ import java.util.stream.Stream;
 public class ContactDaoJdbsImpl implements ContactDAO {
 
     private static final String queryGetAll = "SELECT contact.id,\n" +
-            "       contact.first_name,\n" +
-            "       contact.last_name,\n" +
-            "       contact.email,\n" +
-            "       contact.phones,\n" +
-            "       `group`.name\n" +
-            "FROM contact\n" +
-            "         LEFT JOIN contact_has_role ON contact.id = contact_has_role.contact_id\n" +
-            "         LEFT JOIN `group` ON contact_has_role.group_id = `group`.id;";
+            "                  contact.first_name,\n" +
+            "                  contact.last_name,\n" +
+            "                  contact.email,\n" +
+            "                 contact.phones,\n" +
+            "                 `group`.name\n" +
+            "            FROM contact\n" +
+            "               LEFT JOIN contact_has_group ON contact.id = contact_has_group.contaqct_id\n" +
+            "                 LEFT JOIN `group` ON contact_has_group.group_id = `group`.id";
 
     Connection connection;
 
@@ -102,9 +102,9 @@ public class ContactDaoJdbsImpl implements ContactDAO {
             url = dbProperties.getProperty("connection.url");
             user = dbProperties.getProperty("connection.username");
             password = dbProperties.getProperty("connection.password");
-            //Class.forName(driverClass);
+            Class.forName(driverClass);
             connection = DriverManager.getConnection(url, user, password);
-        } catch (IOException | SQLException e) {
+        } catch (IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

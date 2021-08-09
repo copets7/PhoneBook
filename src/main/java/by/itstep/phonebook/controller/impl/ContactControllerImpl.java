@@ -24,7 +24,7 @@ public class ContactControllerImpl implements ContactController {
 
     @Override
     public List<Contact> getAll() {
-        return null;
+        return contactService.getAll();
     }
 
     @Override

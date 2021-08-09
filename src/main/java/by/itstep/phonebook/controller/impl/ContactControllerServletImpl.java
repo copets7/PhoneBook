@@ -45,22 +45,6 @@ public class ContactControllerServletImpl extends HttpServlet implements Contact
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("lastName");
-        String email = req.getParameter("email");
-        String phone = req.getParameter("phone");
-        Set<String> phones = new HashSet<>();
-        phones.add(phone);
-        Contact contact = new Contact(firstName, lastName, phones, email, null);
-        try {
-            createContact(contact);
-        } catch (ServiceException e) {
-            throw new ServletException(e);
-        }
-    }
-
-    @Override
     public void createContact(Contact contact) throws ServiceException {
         contactService.createContact(contact);
     }

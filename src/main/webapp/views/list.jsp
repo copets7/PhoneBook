@@ -1,44 +1,44 @@
 <%@ page import="java.util.List" %>
 <%@ page import="by.itstep.phonebook.entity.Contact" %>
-<%@ page import="jdk.nashorn.internal.ir.debug.JSONWriter" %><%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 7/26/21
-  Time: 9:51 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Contacts</title>
+    <title>Contacts list</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body>
-<div>
-    <h1>Super app!</h1>
+<body class="w3-light-grey">
+<div class="w3-container w3-blue-grey w3-opacity w3-right-align">
+    <h1>Phone Book</h1>
 </div>
 
-<div>
-    <div>
-        <div>
+<div class="w3-container w3-center w3-margin-bottom w3-padding">
+    <div class="w3-card-4">
+        <div class="w3-container w3-light-blue">
             <h2>Contacts</h2>
         </div>
         <%
             List<Contact> contacts = (List<Contact>) request.getAttribute("contacts");
 
             if (contacts != null && !contacts.isEmpty()) {
-                out.println("<ui>");
+                out.println("<ul class=\"w3-ul\">");
                 for (Contact s : contacts) {
-                    out.println("<li>" + s + "</li>");
+                    out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
                 }
-                out.println("</ui>");
-            } else out.println("<p>There are no users yet!</p>");
+                out.println("</ul>");
+
+            } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
+                    +
+                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
+                    "   <h5>There are no contacts yet!</h5>\n" +
+                    "</div>");
         %>
     </div>
 </div>
 
-<div>
-    <button onclick="location.href='phonebook-1.0/'">Back to main</button>
+<div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">
+    <button class="w3-btn w3-round-large" onclick="location.href='/phonebook_war'">Back to main</button>
 </div>
 </body>
 </html>
