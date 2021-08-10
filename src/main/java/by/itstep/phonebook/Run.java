@@ -22,6 +22,7 @@ public class Run {
         return instance.findAll();
     }
 
+
     private static void pasteContact(){
         Contact contact = new Contact("Ilia", "Madison",
                 new HashSet<>(Collections.singletonList("+375-29-1233")), "mad@fakeemail.com", null);
