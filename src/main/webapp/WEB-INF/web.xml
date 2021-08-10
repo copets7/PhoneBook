@@ -5,22 +5,22 @@
          version="4.0">
     <!-- add servlet -->
     <servlet>
-        <servlet-name>add</servlet-name>
-        <servlet-class>by.itstep.phonebook.controller.servlets.AddContactServlet</servlet-class>
+        <servlet-name>AddContactServlet</servlet-name>
+        <servlet-class>by.itstep.phonebook.view.servlets.AddContactServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>add</servlet-name>
+        <servlet-name>AddContactServlet</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
     <!-- list servlet -->
     <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>by.itstep.phonebook.controller.impl.ContactControllerServletImpl</servlet-class>
+        <servlet-name>ListContacts</servlet-name>
+        <servlet-class>by.itstep.phonebook.view.servlets.ListContacts</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>list</servlet-name>
+        <servlet-name>ListContacts</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
 
